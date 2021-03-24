@@ -31,8 +31,8 @@ const useStyles = makeStyles((theme: Theme) =>
     red: {
       color: 'red',
     },
-    blue: {
-      color: 'red',
+    green: {
+      color: 'green',
     },
     paper: {
       height: 50,
@@ -101,7 +101,7 @@ const Board = ({ reset }: BoardProp) => {
               <Typography
                 variant='body1'
                 gutterBottom
-                className={clsx(classes.title, player ? classes.red : classes.blue)}
+                className={clsx(classes.title, player ? classes.red : classes.green)}
               >
                 {player ? 'X' : 'O'}
               </Typography>
@@ -114,7 +114,7 @@ const Board = ({ reset }: BoardProp) => {
               <Typography
                 variant='body1'
                 gutterBottom
-                className={clsx(classes.title, winner === 'X' ? classes.red : classes.blue)}
+                className={clsx(classes.title, winner === 'X' ? classes.red : classes.green)}
               >
                 {winner}
               </Typography>
@@ -154,7 +154,7 @@ const Board = ({ reset }: BoardProp) => {
                     <Typography
                       variant='body1'
                       gutterBottom
-                      className={clsx(classes.title, classes.box, value === 1 ? classes.red : classes.blue)}
+                      className={clsx(classes.title, classes.box, value === 1 ? classes.red : classes.green)}
                     >
                       {value === 1 ? 'X' : undefined}
                       {value === -1 ? 'O' : undefined}
