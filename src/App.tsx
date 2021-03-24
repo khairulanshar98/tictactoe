@@ -132,7 +132,6 @@ const Board = ({ reset }: BoardProp) => {
         <Button
           variant='contained'
           onClick={reset}
-          disabled={!winner}
           color='secondary'
           role='reset'
         >
