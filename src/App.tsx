@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper'
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      textAlign: "center",
+      textAlign: 'center',
     },
     header: {
       '& > *': {
@@ -92,14 +92,14 @@ const Board = ({ reset }: BoardProp) => {
   return (
     <React.StrictMode>
       <header className={classes.header}>
-        <Typography variant="h6" gutterBottom>
+        <Typography role='title' variant='h6' gutterBottom>
           Current Player:
           {
             winner ?
               <></>
               :
               <Typography
-                variant="body1"
+                variant='body1'
                 gutterBottom
                 className={clsx(classes.title, player ? classes.red : classes.blue)}
               >
@@ -107,12 +107,12 @@ const Board = ({ reset }: BoardProp) => {
               </Typography>
           }
         </Typography>
-        <Typography variant="h6" gutterBottom>
+        <Typography role='winner' variant='h6' gutterBottom>
           Winner:
           {
             winner ?
               <Typography
-                variant="body1"
+                variant='body1'
                 gutterBottom
                 className={clsx(classes.title, winner === 'X' ? classes.red : classes.blue)}
               >
@@ -120,7 +120,7 @@ const Board = ({ reset }: BoardProp) => {
               </Typography>
               :
               <Typography
-                variant="body1"
+                variant='body1'
                 gutterBottom
                 className={classes.title}
               >
@@ -130,10 +130,11 @@ const Board = ({ reset }: BoardProp) => {
 
         </Typography>
         <Button
-          variant="contained"
+          variant='contained'
           onClick={reset}
           disabled={!winner}
-          color="secondary"
+          color='secondary'
+          role='reset'
         >
           Reset
           </Button>
@@ -141,16 +142,17 @@ const Board = ({ reset }: BoardProp) => {
       {
         boards.map((board, r) => {
           return (
-            <Grid key={`row-${r}`} container justify="center" spacing={0}>
+            <Grid key={`row-${r}`} container justify='center' spacing={0}>
               {board.map((value, c) => (
                 <Grid key={`col-${r}-${c}`} item>
                   <Paper
+                    role={`box-${r}-${c}`}
                     className={classes.paper}
                     elevation={0}
                     onClick={() => handleClick(r, c)}
                   >
                     <Typography
-                      variant="body1"
+                      variant='body1'
                       gutterBottom
                       className={clsx(classes.title, classes.box, value === 1 ? classes.red : classes.blue)}
                     >
@@ -177,7 +179,7 @@ const App = () => {
   const [boardKey, setKey] = React.useState(1)
   const hanldeReset = () => setKey(p => p + 1)
   return (
-    <Container maxWidth="sm" className={classes.root}>
+    <Container maxWidth='sm' className={classes.root}>
       <Board key={boardKey} reset={hanldeReset} />
     </Container>
   )
