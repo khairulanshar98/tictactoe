@@ -55,11 +55,21 @@
   "jest": {
     "verbose": true,
     "collectCoverage": true,
-    "reporters": [ "default", "jest-junit" ]
+    "reporters": [ "default", [ "jest-junit", { "suiteName": "jest tests" } ] ]
   },
   "jestSonar": {
     "reportPath": "reports",
     "reportFile": "report.xml",
     "indent": 4
+  },
+  "jest-junit": {
+    "suiteName": "jest tests",
+    "outputDirectory": "reports",
+    "outputName": "junit.xml",
+    "uniqueOutputName": "false",
+    "classNameTemplate": "{classname}-{title}",
+    "titleTemplate": "{classname}-{title}",
+    "ancestorSeparator": " › ",
+    "usePathForSuiteName": "true"
   }
 }
