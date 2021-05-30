@@ -1,11 +1,5 @@
-/**
- * Add custom settings to Jasmine.
- */
-
-/*globals jasmine*/
-
+const jasmine = require('jasmine-reporters');
 jasmine.VERBOSE = true;
 
-require('jasmine-reporters');
 var reporter = new jasmine.JUnitXmlReporter("output/");
 jasmine.getEnv().addReporter(reporter);
