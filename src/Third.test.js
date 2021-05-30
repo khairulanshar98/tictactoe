@@ -1,6 +1,6 @@
 import swap from './Third';
 
-test('renders App', async () => {
+test('swap', async () => {
     expect(swap()).toBe('');
     expect(swap([])).toBe('');
     expect(swap([1])).toBe('1');
