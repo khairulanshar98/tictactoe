@@ -55,6 +55,7 @@
   "jest": {
     "verbose": true,
     "collectCoverage": true,
+    "testURL": "http://localhost/",
     "reporters": [ "default", [ "jest-junit", { "suiteName": "jest tests" } ] ]
   },
   "jestSonar": {
