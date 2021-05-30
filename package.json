@@ -54,7 +54,6 @@
   "jest": {
     "verbose": true,
     "collectCoverage": true,
-    "coverageFormats": ["json", "html"],
     "setupTestFrameworkScriptFile": "<rootDir>/setup-jasmine-env.js"
   }
 }
