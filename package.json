@@ -52,6 +52,7 @@
     "babel-jest": "^26.6.3"
   },
   "jest": {
+    "verbose": true,
     "collectCoverage": true,
     "coverageFormats": ["json", "html"],
     "setupTestFrameworkScriptFile": "<rootDir>/setup-jasmine-env.js"
